@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <h1>Welcome to {{ title }} page </h1>
+   <form action="{% url 'signin' %}" method="POST" novalidate>
+    {% csrf_token %}
+    <table>
+      {{ loginfm.as_table }}
+    </table>
+     
+    <input type="submit" value="signin">
+    <small><a href="{% url 'forgetpass' %}">Forget Passsword</a></small>
+   </form>
+   <a href="{% url 'signup' %}">signup</a>
+</body>
+</html>
